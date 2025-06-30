@@ -2,7 +2,14 @@
 
 En este proyecto vamos a hacer seguimiento de las principales criptomonedas del mercado. Para ello, vamos a utilizar la API de CoinCap para obtener información sobre las criptomonedas y mostrarla en nuestra aplicación.
 
-url: [https://api.coincap.io/v2/assets/](https://api.coincap.io/v2/assets/)
+url: [rest.coincap.io/v3/](rest.coincap.io/v3/)
+
+Aquí tenéis la documentación
+[https://pro.coincap.io/api-docs](https://pro.coincap.io/api-docs)
+
+** WARNING: **
+Todas las peticiones necesitan la API key. Por tanto necesitaréis crear una cuenta gratuita
+[https://pro.coincap.io/signup](https://pro.coincap.io/signup)
 
 ## Pasos previos
 Clona el repositorio y haz un `npm i` para instalar todas las dependencias necesarias. 
@@ -45,7 +52,19 @@ El componente `Home` es el componente principal de nuestra aplicación. Este com
 
 El componente `Coin` muestra información detallada sobre una criptomoneda en particular. Para ello, hace una petición a la API de CoinCap y muestra la información de la criptomoneda en un formato más detallado.
 
-url de ejemplo: [https://api.coincap.io/v2/assets/bitcoin](https://api.coincap.io/v2/assets/bitcoin)
+url de ejemplo: [rest.coincap.io/v3/assets?apiKey=YourApiKey/bitcoin](rest.coincap.io/v3/assets?apiKey=YourApiKey/bitcoin)
+cambia la apikey por la vuestra. La encontraréis dentro de dashbard.
+[https://pro.coincap.io/dashboard](https://pro.coincap.io/dashboard)
+
+Si queréis usar esa KEY como variable de entorno podéis meterla en el archivo .env en la raiz del proyecto. Cualquier variable de entorno debe comenzar con VITE
+Ejemplo
+```js
+VITE_API_URL=
+```
+Y para usarla será así
+```js
+import.meta.env.VITE_API_URL
+```
 
 4. **CSS:**
 Además añade estilo a tu aplicación. Recuerda la diferencia de añadir estilos de manera modular y global.  
